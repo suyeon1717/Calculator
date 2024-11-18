@@ -19,6 +19,11 @@ public class Calculator {
 
                 System.out.print("두 번째 숫자를 입력하세요: ");
                 secondNum = sc.nextInt();
+
+                // 음수인지 확인
+                if(firstNum < 0 || secondNum < 0)
+                    throw new InputMismatchException();
+
             }catch(InputMismatchException e){
                 System.out.println("잘못된 입력입니다. 처음으로 돌아갑니다.");
                 continue;
@@ -56,8 +61,11 @@ public class Calculator {
             System.out.println("계산 결과: " + result);
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
 
-            if (sc.nextLine().equals("exit"))
+            if (sc.nextLine().equals("exit")){
+                sc.close();
                 break; // "exit" 입력 시 반복 종료
+            }
+
 
             result = 0; // 계산 결과 초기화
         }
