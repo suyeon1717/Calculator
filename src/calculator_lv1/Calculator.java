@@ -14,6 +14,7 @@ public class Calculator {
         // 반복문을 사용해서 연산을 반복한다.
         while(true){
 
+            // 피연산자 입력
             try{
                 System.out.print("첫 번째 숫자를 입력하세요: ");
                 firstNum = sc.nextInt();
@@ -33,13 +34,14 @@ public class Calculator {
                 sc.nextLine();
             }
 
+            // 연산자 입력 -> 사칙연산 기호 입력 받을 때까지 반복
             do{
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 operator = sc.nextLine().charAt(0);
             }while(operator != '+' && operator != '-' && operator != '*' && operator != '/');
 
 
-            // 사칙연산 조건문
+            // 입력한 사칙연산 기호에 따라 계산 시작
             switch (operator) {
                 case '+':
                     result = firstNum + secondNum;
