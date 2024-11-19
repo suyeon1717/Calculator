@@ -48,8 +48,12 @@ public class Main {
                 continue; // while 반복문 처음으로 돌아가서 다시 입력받기
             }
 
+
+
+            //--------------------
+
             // 계산기 실행
-            calculator.calculate(operator, firstNum, secondNum);
+            calculator.setResult(calculator.calculate(operator, firstNum, secondNum));
             System.out.println("계산 결과: " + calculator.getResult());
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료 / remove 입력 시 가장 오래된 계산 결과값 삭제) : ");

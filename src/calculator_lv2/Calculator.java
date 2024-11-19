@@ -6,21 +6,26 @@ import java.util.Queue;
 public class Calculator {
 
     // 속성(필드)
-    private Queue<Double> resultQueue = new LinkedList<Double>(); // 계산 결과를 저장하는 컬렉션
+    private Queue<Double> resultQueue = new LinkedList<>(); // 계산 결과를 저장하는 컬렉션
+    int firstNum, secondNum;
+    char operator;
 
     // 생성자
     Calculator(){};
 
-    public void calculate(char operator, int firstNum, int secondNum){
+    public Double calculate(char operator, int firstNum, int secondNum){
 
+        double result = 0;
         if(operator == '+')
-            setResult((double) firstNum + secondNum);
+            result = ((double) firstNum + secondNum);
         else if(operator == '-')
-            setResult((double) firstNum - secondNum);
+            result = ((double) firstNum - secondNum);
         else if(operator == '*')
-            setResult((double) firstNum * secondNum);
+            result = ((double) firstNum * secondNum);
         else if(operator == '/')
-            setResult((double) firstNum / secondNum);
+            result = ((double) firstNum / secondNum);
+        
+        return result;
     }
 
     public void setResult(double result){
