@@ -1,39 +1,18 @@
 package calculator_lv2;
 
-import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class Calculator {
 
     // 속성(필드)
-    Queue<Double> answerQueue = new LinkedList<>(); // 계산 결과를 저장하는 컬렉션
-    int firstNum, secondNum; // 피연산자
-    char operator; // 연산자
+    private Queue<Double> resultQueue = new LinkedList<Double>(); // 계산 결과를 저장하는 컬렉션
 
     // 생성자
-//    Calculator(char operator, int firstNum, int secondNum){
-//        this.operator = operator;
-//        this.firstNum = firstNum;
-//        this.secondNum = secondNum;
-//    };
     Calculator(){};
 
-    // 메서드
-//    public Double calculate(char operator, int firstNum, int secondNum){
-//        if(operator == '+')
-//            answerQueue.add((double) firstNum + secondNum);
-//        else if(operator == '-')
-//            answerQueue.add((double) firstNum - secondNum);
-//        else if(operator == '*')
-//            answerQueue.add((double) firstNum * secondNum);
-//        else if(operator == '/')
-//            answerQueue.add((double) firstNum / secondNum);
-//
-//        return ((LinkedList<Double>)answerQueue).getLast();
-//    }
-
     public void calculate(char operator, int firstNum, int secondNum){
+
         if(operator == '+')
             setResult((double) firstNum + secondNum);
         else if(operator == '-')
@@ -45,11 +24,17 @@ public class Calculator {
     }
 
     public void setResult(double result){
-        answerQueue.add(result);
+        resultQueue.add(result);
     }
 
     public Double getResult(){
-        return ((LinkedList<Double>)answerQueue).getLast();
+        return ((LinkedList<Double>) resultQueue).getLast();
+    }
+
+    public void removeResult(){
+        double result = resultQueue.peek(); // 가장 먼저 저장된 데이터
+        System.out.println(result + " 삭제 완료");
+        resultQueue.poll(); // FIFO -> 가장 맨 아래 값을 꺼내어 삭제
     }
 
 

@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        double result = 0;
         int firstNum, secondNum;
 
         Scanner sc = new Scanner(System.in);
-        Calculator cal = new Calculator();
+        Calculator calculator = new Calculator();
+
         // 반복문을 사용해서 연산을 반복한다.
         while(true){
 
@@ -23,7 +23,7 @@ public class Main {
             // 예외처리 - 숫자 입력 오류
             catch(InputMismatchException e){
                 System.out.println("잘못된 입력입니다. 처음으로 돌아갑니다.");
-                continue; // 다시 입력 받기
+                continue; // while 반복문 처음으로 돌아가서 다시 입력받기
             }
             finally {
                 sc.nextLine();
@@ -43,14 +43,19 @@ public class Main {
                 System.out.println("사칙연산 기호를 다시 입력하세요. (+, -, *, /)");
                 continue; // while 반복문 처음으로 돌아가서 다시 입력받기
             }
-            cal.calculate(operator, firstNum, secondNum);
-            System.out.println("계산 결과: " + cal.getResult());
+
+            calculator.calculate(operator, firstNum, secondNum);
+            System.out.println("계산 결과: " + calculator.getResult());
 //            System.out.println("계산 결과: " + cal.calculate(operator, firstNum, secondNum));
-            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
+            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료 / remove 입력 시 가장 오래된 계산 결과값 삭제) : ");
+            String str = sc.nextLine();
 
-            if (sc.nextLine().equals("exit"))
-                break; // "exit" 입력 시 반복 종료
-
+            // "exit" 입력 시 반복 종료
+            if (str.equals("exit"))
+                break;
+            // "remove" 입력 시 결과 값을 저장하는 컬렉션에서 가장 처음으로 저장된 데이터 삭제
+            else if(str.equals("remove"))
+                calculator.removeResult();
         }
     }
 }
