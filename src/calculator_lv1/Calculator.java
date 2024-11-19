@@ -7,6 +7,7 @@ public class Calculator {
     public static void main(String[] args) {
         double result = 0;
         int firstNum, secondNum;
+        char operator;
 
         Scanner sc = new Scanner(System.in);
 
@@ -32,8 +33,11 @@ public class Calculator {
                 sc.nextLine();
             }
 
-            System.out.print("사칙연산 기호를 입력하세요: ");
-            char operator = sc.nextLine().charAt(0);
+            do{
+                System.out.print("사칙연산 기호를 입력하세요: ");
+                operator = sc.nextLine().charAt(0);
+            }while(operator != '+' && operator != '-' && operator != '*' && operator != '/');
+
 
             // 사칙연산 조건문
             switch (operator) {
@@ -53,9 +57,6 @@ public class Calculator {
                     } else
                         result = (double) firstNum / secondNum;
                     break;
-                default:
-                    System.out.println("사칙연산 기호를 다시 입력하세요. (+, -, *, /)");
-                    continue; // while 반복문 처음으로 돌아가서 다시 입력받기
             }
 
             System.out.println("계산 결과: " + result);
