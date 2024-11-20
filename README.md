@@ -17,3 +17,15 @@
 ## 🖥 구현
 - UI : 콘솔 기반의 계산기
 - 결과값 저장 컬렉션 : Queue
+- 결과 <br>
+  ![image](https://github.com/user-attachments/assets/5293b057-651d-489b-9d54-e8c48c67d30c)
+![image](https://github.com/user-attachments/assets/4af5e9d2-f112-4e2b-b745-b22a3e79362a)
+
+## ⚠️ 에러 처리
+- 숫자 입력 시, 다른 타입을 입력했을 경우 & 음수 입력 <br>
+  ![image](https://github.com/user-attachments/assets/d432c2d2-c60a-401f-a2f3-2c28f3d3b48f) <br>
+  ![image](https://github.com/user-attachments/assets/6e21bb75-f6ed-439e-ac59-9d18095897ff) <br>
+- 0으로 나누기<br>
+  ![image](https://github.com/user-attachments/assets/6961364c-b493-447b-b2a4-9f56930e659e)
+- 사칙연산 기호 오입력<br>
+  ![image](https://github.com/user-attachments/assets/bf34c2ba-a4e9-46a2-accb-60736505a35a)
