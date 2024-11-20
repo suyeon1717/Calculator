@@ -7,8 +7,6 @@ public class Calculator {
 
     // 속성(필드)
     private Queue<Double> resultQueue = new LinkedList<>(); // 계산 결과를 저장하는 컬렉션
-    int firstNum, secondNum;
-    char operator;
 
     // 생성자
     Calculator(){};
@@ -30,6 +28,7 @@ public class Calculator {
 
     public void setResult(double result){
         resultQueue.add(result);
+        System.out.println(resultQueue.toString());
     }
 
     public Double getResult(){

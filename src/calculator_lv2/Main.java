@@ -49,12 +49,11 @@ public class Main {
             }
 
 
-
-            //--------------------
-
             // 계산기 실행
+            // 1. 입력받은 매개변수로 calculate() 메서드 실행
+            // 2. 반환된 결과값을 setResult()메서드를 통해 결과값 컬렉션에 추가 (setter)
             calculator.setResult(calculator.calculate(operator, firstNum, secondNum));
-            System.out.println("계산 결과: " + calculator.getResult());
+            System.out.println("계산 결과: " + calculator.getResult()); //getter
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료 / remove 입력 시 가장 오래된 계산 결과값 삭제) : ");
             String str = sc.nextLine();
