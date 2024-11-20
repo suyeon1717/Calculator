@@ -11,6 +11,7 @@ public class Calculator {
     // 생성자
     Calculator(){};
 
+    // 매개변수를 이용하여 연산하기
     public Double calculate(char operator, int firstNum, int secondNum){
 
         double result = 0;
@@ -26,15 +27,17 @@ public class Calculator {
         return result;
     }
 
+    // 리턴받은 연산 결과를 컬렉션에 저장
     public void setResult(double result){
         resultQueue.add(result);
-        System.out.println("결과값이 컬렉션에 잘 저장되는지 확인 >> " + resultQueue.toString());
     }
 
+    // 결과 출력을 위해 컬렉션에 저장된 결과값을 가져온다.
     public Double getResult(){
         return ((LinkedList<Double>) resultQueue).getLast();
     }
 
+    // 가장 먼저 저장된 데이터를 삭제한다 poll()
     public void removeResult(){
         double result = resultQueue.peek(); // 가장 먼저 저장된 데이터
         System.out.println(result + " 삭제 완료");
