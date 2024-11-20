@@ -26,7 +26,9 @@ public class Calculator {
                 if(firstNum < 0 || secondNum < 0)
                     throw new InputMismatchException();
 
-            }catch(InputMismatchException e){
+            }
+            // 예외처리 - 숫자 입력 오류
+            catch(InputMismatchException e){
                 System.out.println("잘못된 입력입니다. 처음으로 돌아갑니다.");
                 continue;
             }
