@@ -55,17 +55,6 @@ public class Main {
                 continue; // while 반복문 처음으로 돌아가서 다시 입력받기
             }
 
-//            do{
-//                System.out.print("사칙연산 기호를 입력하세요: ");
-//                operator = sc.nextLine().charAt(0);
-//            }while(operator != '+' && operator != '-' && operator != '*' && operator != '/');
-//
-//            // 예외처리 - 두 번째 숫자를 0으로 입력하고, 연산 기호는 '/' 으로 입력한 경우
-//            if (operator == '/' && secondNum == 0){
-//                System.out.println("나눗셈 연산에서 두 번째 정수에 0이 입력될 수 없습니다. 다시 입력하세요.");
-//                continue; // while 반복문 처음으로 돌아가서 다시 입력받기
-//            }
-
 
             // 계산기 실행
             // 1. 입력받은 매개변수로 calculate() 메서드 실행
