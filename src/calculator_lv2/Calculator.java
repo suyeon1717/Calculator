@@ -28,7 +28,7 @@ public class Calculator {
 
     public void setResult(double result){
         resultQueue.add(result);
-        System.out.println(resultQueue.toString());
+        System.out.println("결과값이 컬렉션에 잘 저장되는지 확인 >> " + resultQueue.toString());
     }
 
     public Double getResult(){
